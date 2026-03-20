@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dzērienu izvēlne — Portfolio</title>
+  <link rel="stylesheet" href="css/mansStils.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar nav-bar w3-card">
+    <a href="index.html" class="w3-bar-item w3-button nav-logo"> Portfolio</a>
+    <a href="index.html" class="w3-bar-item w3-button nav-link w3-right">Atpakaļ uz Portfolio</a>
+  </div>
+</div>
+
+<div class="main-container" style="padding-top:90px; max-width:500px;">
+  <section>
+    <div class="section-header">
+      <div class="section-num"></div>
+      <div>
+        <h2 class="section-title">Dzērienu izvēlne</h2>
+        <p class="section-desc">Izvēlies vairākus dzērienus</p>
+      </div>
+    </div>
+    <div class="section-content">
+
+      <script>
+        function maksa(){
+          let dz = document.getElementsByTagName('input');
+          let sum = 0;
+          for(i = 0; i < dz.length-1; i++) {
+            if(dz[i].checked) sum += Number(dz[i].value);
+          }
+          document.getElementById("maksa").innerHTML = "Jāmaksā " + sum + " €";
+        }
+      </script>
+
+      <p id="maksa" style="font-family:'Space Mono',monospace; font-size:1.1rem; color:var(--accent); margin-bottom:16px; min-height:28px;"></p>
+
+      <form>
+        <input type="checkbox" id="kafija" name="kafija" value="3.60">
+        <label for="kafija">kafija — 3.60 €</label><br><br>
+        <input type="checkbox" id="sula" name="sula" value="2.50">
+        <label for="sula">sula — 2.50 €</label><br><br>
+        <input type="checkbox" id="kakao" name="kakao" value="3.20">
+        <label for="kakao">kakao — 3.20 €</label><br><br>
+        <input type="checkbox" id="udens" name="udens" value="1.20">
+        <label for="udens">ūdens — 1.20 €</label><br><br>
+        <input type="button" id="poga" value="jāmaksā" onclick="maksa()"
+          style="background:rgba(200,245,66,0.1); border:1px solid var(--accent); color:var(--accent); padding:10px 20px; border-radius:4px; cursor:pointer; font-family:'Space Mono',monospace; font-size:0.9rem;">
+      </form>
+
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>Datorikas Portfolio &nbsp;·&nbsp; <a href="index.html" class="footer-link">← Sākumlapa</a></p>
+</footer>
+
+</body>
+</html>

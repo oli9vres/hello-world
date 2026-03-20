@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formas — Portfolio</title>
+  <link rel="stylesheet" href="css/mansStils.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    input[type="text"], input[type="button"], input[type="reset"] {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      margin: 4px 2px;
+    }
+    input[type="button"] {
+      background: rgba(200,245,66,0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+    }
+    input[type="button"]:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+    }
+    input[type="reset"] {
+      border: 1px solid var(--text-muted);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .forma-block {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    label, p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    hr { border-color: var(--border); margin: 12px 0; }
+  </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar nav-bar w3-card">
+    <a href="index.html" class="w3-bar-item w3-button nav-logo"> Portfolio</a>
+    <a href="index.html" class="w3-bar-item w3-button nav-link w3-right">← Atpakaļ uz Portfolio</a>
+  </div>
+</div>
+
+<div class="main-container" style="padding-top:90px; max-width:600px;">
+
+  <!-- 1. FORMA — datums -->
+  <section style="margin-bottom:16px;">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div>
+        <h2 class="section-title">Formas un ievadlauku piemērs</h2>
+        <p class="section-desc">Datums un kalkulators</p>
+      </div>
+    </div>
+    <div class="section-content">
+
+      <form>
+        <div class="forma-block">
+          <label>Šodienas datums</label>
+          <input name="datums">
+        </div>
+        <div class="forma-block">
+          <span style="color:var(--text-muted); font-size:0.88rem;">Ja gribi uzzināt šodienas datumu, spied pogu DATUMS</span>
+          <input onclick="datums.value=new Date();" name="poga" value="DATUMS" type="button">
+        </div>
+        <div class="forma-block">
+          <span style="color:var(--text-muted); font-size:0.88rem;">Ja gribi izdzēst datuma lodziņa saturu, spied pogu RESET</span>
+          <input value="RESET" type="reset">
+        </div>
+      </form>
+
+      <hr>
+
+  
+      <form>
+        <div class="forma-block">
+          <label style="min-width:80px;">1. skaitlis</label>
+          <input type="text" name="sk1" style="width:100px;">
+        </div>
+        <div class="forma-block" style="margin:8px 0;">
+          <input value="+" name="plus"  onclick="rez.value=Number(sk1.value)+Number(sk2.value)" type="button">
+          <input value="−" name="minus" onclick="rez.value=Number(sk1.value)-Number(sk2.value)" type="button">
+          <input value="×" name="reiz"  onclick="rez.value=sk1.value*sk2.value" type="button">
+          <input value="÷" name="dal"   onclick="rez.value=sk2.value!=0 ? Math.round(sk1.value/sk2.value*10000)/10000 : 'kļūda: dal ar 0'" type="button">
+          <input value="RESET" type="button" onclick="sk1.value=''; sk2.value=''; rez.value='';" style="border-color:var(--text-muted); color:var(--text-muted);">
+        </div>
+        <div class="forma-block">
+          <label style="min-width:80px;">2. skaitlis</label>
+          <input type="text" name="sk2" style="width:100px;">
+        </div>
+        <hr>
+        <div class="forma-block">
+          <label style="min-width:80px;">Rezultāts</label>
+          <input name="rez" style="width:160px; color:var(--accent); font-family:'Space Mono',monospace;">
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <p>Datorikas Portfolio &nbsp;·&nbsp; <a href="index.html" class="footer-link">← Sākumlapa</a></p>
+</footer>
+
+</body>
+</html>

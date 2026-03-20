@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dzēriens — Portfolio</title>
+  <link rel="stylesheet" href="css/mansStils.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar nav-bar w3-card">
+    <a href="index.html" class="w3-bar-item w3-button nav-logo"> Portfolio</a>
+    <a href="index.html" class="w3-bar-item w3-button nav-link w3-right">← Atpakaļ uz Portfolio</a>
+  </div>
+</div>
+
+<div class="main-container" style="padding-top:90px; max-width:500px;">
+  <section>
+    <div class="section-header">
+      <div class="section-num"></div>
+      <div>
+        <h2 class="section-title">Izvēlies dzērienu</h2>
+        <p class="section-desc">Cena parādās blakus pogai</p>
+      </div>
+    </div>
+    <div class="section-content">
+
+      <script>
+        function maksa(){
+          let dz = document.getElementsByName('drink');
+          for(i = 0; i < dz.length; i++) {
+            if(dz[i].checked)
+              document.getElementById("poga").value = dz[i].value + " €";
+          }
+        }
+      </script>
+
+      <p style="margin-bottom:16px;">Izvēlies dzērienu:</p>
+      <form>
+        <input type="radio" id="kafija" name="drink" value="3.60">
+        <label for="kafija" style="margin-right:16px;">kafija</label><br><br>
+        <input type="radio" id="sula" name="drink" value="2.50">
+        <label for="sula" style="margin-right:16px;">sula</label><br><br>
+        <input type="radio" id="kakao" name="drink" value="3.20">
+        <label for="kakao" style="margin-right:16px;">kakao</label><br><br>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:8px;">
+          <input type="button" id="poga" value="jāmaksā" onclick="maksa()" 
+            style="background:rgba(200,245,66,0.1); border:1px solid var(--accent); color:var(--accent); padding:10px 20px; border-radius:4px; cursor:pointer; font-family:'Space Mono',monospace; font-size:0.9rem;">
+          <span id="cena" style="font-family:'Space Mono',monospace; font-size:1rem; color:var(--accent);"></span>
+        </div>
+      </form>
+
+      <script>
+        let radios = document.getElementsByName('drink');
+        for(let i = 0; i < radios.length; i++){
+          radios[i].addEventListener('change', function(){
+            document.getElementById("cena").innerHTML = "Cena: <b>" + this.value + " &euro;</b>";
+          });
+        }
+      </script>
+
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>Datorikas Portfolio &nbsp;·&nbsp; <a href="index.html" class="footer-link">← Sākumlapa</a></p>
+</footer>
+
+</body>
+</html>
+
+
+ 

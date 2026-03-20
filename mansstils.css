@@ -1,0 +1,406 @@
+/* ========================
+   mansStils.css
+   Zils un balts dizains
+   ======================== */
+
+/* --- KRĀSAS --- */
+:root {
+    --zils:        #1a56a0;
+    --tumsi-zils:  #0d3578;
+    --gaiszi-zils: #e8f0fb;
+    --teksts:      #222222;
+    --pels:        #555555;
+    --robeža:      #c0d4f0;
+}
+
+/* --- PAMATS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: var(--teksts);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+h1 { color: var(--zils); font-size: 2rem; margin-bottom: 12px; }
+h2 { color: var(--zils); font-size: 1.4rem; margin-bottom: 10px; }
+h3 { color: var(--tumsi-zils); font-size: 1.05rem; margin-bottom: 8px; }
+
+p  { line-height: 1.7; color: var(--pels); margin-bottom: 10px; }
+
+a  { color: var(--zils); text-decoration: none; }
+a:hover { color: var(--tumsi-zils); text-decoration: underline; }
+
+/* --- NAVIGĀCIJA --- */
+.nav-bar {
+    background-color: var(--zils) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nav-link {
+    color: #ddeeff !important;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    background-color: var(--tumsi-zils) !important;
+    color: #ffffff !important;
+}
+
+.nav-highlight {
+    background-color: var(--tumsi-zils) !important;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* --- GALVENAIS KONTEINERS --- */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+}
+
+/* --- SEKCIJAS --- */
+section {
+    background-color: #ffffff;
+    border: 1px solid var(--robeža);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.section-header {
+    background-color: var(--zils);
+    color: #ffffff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.section-header:hover {
+    background-color: var(--tumsi-zils);
+}
+
+.section-num {
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.5;
+    min-width: 60px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.section-desc {
+    font-size: 0.85rem;
+    color: #cce0ff;
+    margin: 0;
+}
+
+.section-content {
+    padding: 24px;
+}
+
+/* --- KARTIŅAS --- */
+.work-card {
+    background-color: var(--gaiszi-zils);
+    border: 1px solid var(--robeža);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.work-card:hover {
+    box-shadow: 0 4px 12px rgba(26, 86, 160, 0.15);
+}
+
+.card-img-placeholder {
+    background-color: #d0e4f8;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--pels);
+    font-size: 0.85rem;
+}
+
+.card-img {
+    width: 100%;
+    display: block;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-title {
+    color: var(--zils);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.card-desc {
+    color: var(--pels);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.card-badge {
+    display: inline-block;
+    background-color: var(--zils);
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+/* --- LEJUPLĀDE POGA --- */
+.download-btn {
+    display: inline-block;
+    margin-top: 12px;
+    background-color: var(--zils);
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: var(--tumsi-zils);
+    text-decoration: none;
+}
+
+/* --- VIDEO --- */
+.video-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.video-placeholder {
+    background-color: #d0e4f8;
+    border: 1px solid var(--robeža);
+    border-radius: 6px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    color: var(--pels);
+}
+
+.play-btn {
+    width: 54px;
+    height: 54px;
+    border: 2px solid var(--zils);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--zils);
+}
+
+.portfolio-video {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* --- PAPILDU SAITES --- */
+.extra-links-section {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    padding: 0 16px;
+}
+
+.extra-links-section h3 {
+    color: var(--pels);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.extra-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.extra-link-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 1px solid var(--robeža);
+    color: var(--zils) !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    text-decoration: none;
+}
+
+.extra-link-btn:hover {
+    background-color: var(--gaiszi-zils);
+    border-color: var(--zils);
+    text-decoration: none;
+}
+
+/* --- OTRAIS.HTML KLASES --- */
+.topic-header {
+    background-color: var(--zils);
+    color: #ffffff;
+    padding: 24px 28px;
+}
+
+.topic-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.topic-intro {
+    color: #cce0ff;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.content-row {
+    padding: 24px;
+}
+
+.text-block {
+    margin-bottom: 24px;
+}
+
+.text-block h3 {
+    color: var(--zils);
+    border-bottom: 2px solid var(--robeža);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.text-block p {
+    color: var(--pels);
+}
+
+.poster-placeholder {
+    min-height: 280px;
+    background-color: #d0e4f8;
+}
+
+.poster-img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.poster-caption {
+    font-size: 0.78rem;
+    color: var(--pels);
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* --- AVOTI --- */
+.sources-section {
+    padding: 20px 28px;
+    border-top: 1px solid var(--robeža);
+    background-color: var(--gaiszi-zils);
+}
+
+.sources-title {
+    color: var(--zils);
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.sources-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sources-list li {
+    font-size: 0.88rem;
+    color: var(--pels);
+    padding-left: 14px;
+    border-left: 3px solid var(--zils);
+}
+
+.source-link {
+    color: var(--zils) !important;
+    font-weight: bold;
+}
+
+.source-link:hover {
+    color: var(--tumsi-zils) !important;
+}
+
+/* --- ATPAKAĻ SAITES --- */
+.back-links {
+    padding: 20px 28px;
+    border-top: 1px solid var(--robeža);
+}
+
+.back-links p {
+    font-size: 0.82rem;
+    color: var(--pels);
+    margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    background-color: var(--zils);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.88rem;
+}
+
+.footer-link {
+    color: #cce0ff !important;
+}
+
+.footer-link:hover {
+    color: #ffffff !important;
+}
+
+/* --- RESPONSĪVS --- */
+@media (max-width: 768px) {
+    .video-container {
+        grid-template-columns: 1fr;
+    }
+    .section-num {
+        display: none;
+    }
+}
