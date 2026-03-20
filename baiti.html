@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baiti</title>
+</head>
+<body>
+
+<form>
+  <p>Aprēķināt cik daudz informācijas var lejupielādēt
+    <input type="number" id="sekundes" name="sekundes" onmouseenter="this.form.reset()">
+    sekundēs, ja interneta ātrums ir 25 Mbps.
+  </p>
+  <p>Atbilde</p>
+  <p>
+    <input type="text" id="rezultats" name="rezultats" readonly>
+    <input type="radio" name="meervieniba" id="kib" value="KiB" onclick="aprekinat()">
+    <label for="kib">KiB</label>
+    <input type="radio" name="meervieniba" id="kb" value="KB" onclick="aprekinat()">
+    <label for="kb">KB</label>
+  </p>
+</form>
+
+<script>
+  function aprekinat() {
+    var sekundes = document.getElementById("sekundes").value;
+    var meervieniba = document.querySelector('input[name="meervieniba"]:checked').value;
+    var rezultats;
+
+    if (meervieniba == "KiB") {
+      rezultats = (sekundes * 25 * 1024 * 1024) / 8 / 1024;
+      document.getElementById("rezultats").value = rezultats.toFixed(2) + " KiB";
+    } else {
+      rezultats = (sekundes * 25 * 1000 * 1000) / 8 / 1000;
+      document.getElementById("rezultats").value = rezultats.toFixed(2) + " KB";
+    }
+  }
+</script>
+
+</body>
+</html>
